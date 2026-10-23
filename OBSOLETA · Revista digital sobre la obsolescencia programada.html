@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OBSOLETA · Revista digital sobre la obsolescencia programada</title>
+<style>
+:root{--bg:#fbf7ef;--sf:#fff;--tx:#1b1a17;--mu:#6a655b;--ac:#e8590c;--ac2:#0b7285;--bd:#e6dfd0;--hd:rgba(251,247,239,.92);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12110f;--sf:#1c1a17;--tx:#f3eee3;--mu:#a59f92;--ac:#ff8a3d;--ac2:#3bc9db;--bd:#33302a;--hd:rgba(18,17,15,.92)}}
+:root[data-theme="dark"]{--bg:#12110f;--sf:#1c1a17;--tx:#f3eee3;--mu:#a59f92;--ac:#ff8a3d;--ac2:#3bc9db;--bd:#33302a;--hd:rgba(18,17,15,.92)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.7 Georgia,"Times New Roman",serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);z-index:60}
+h1,h2,h3,.sans,nav,button,.tag{font-family:"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:var(--ac2)}
+#prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:4px;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:70}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--hd);backdrop-filter:blur(8px);border-bottom:1px solid var(--bd)}
+nav{max-width:1100px;margin:auto;display:flex;align-items:center;gap:6px;padding:10px 16px;overflow-x:auto}
+nav b{letter-spacing:.2em;margin-right:auto;color:var(--ac);white-space:nowrap}
+nav a{text-decoration:none;color:var(--tx);font-size:14px;padding:6px 10px;border-radius:99px;white-space:nowrap}
+nav a:hover{background:var(--bd)}
+button{cursor:pointer;border:1px solid var(--bd);background:var(--sf);color:var(--tx);border-radius:99px;padding:6px 12px;font-size:14px}
+.cover{min-height:92vh;display:grid;place-items:center;text-align:center;padding:60px 20px;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,rgba(232,89,12,.28),transparent 45%),radial-gradient(circle at 80% 70%,rgba(11,114,133,.30),transparent 45%)}
+.cover .in{max-width:900px;position:relative;z-index:2}
+.tag{display:inline-block;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--ac);border:1px solid var(--ac);padding:4px 12px;border-radius:99px}
+.cover h1{font-size:clamp(54px,14vw,150px);line-height:.9;margin:20px 0 10px;letter-spacing:-.04em;background:linear-gradient(120deg,var(--ac),var(--ac2),var(--ac));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite}
+@keyframes flow{to{background-position:200%}}
+.cover p.lead{font-size:clamp(18px,3vw,26px);font-style:italic;color:var(--mu)}
+.bulb{width:150px;margin:10px auto;filter:drop-shadow(0 0 24px var(--ac));animation:flick 4s infinite}
+@keyframes flick{0%,90%,100%{opacity:1}92%{opacity:.35}94%{opacity:1}96%{opacity:.5}}
+.dots span{position:absolute;border-radius:50%;background:var(--ac2);opacity:.2;animation:fl 9s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-40px)}}
+.cta{display:inline-block;margin-top:18px;padding:12px 26px;border-radius:99px;background:var(--ac);color:#fff;text-decoration:none;font-family:"Segoe UI",sans-serif;font-weight:600;transition:transform .2s}
+.cta:hover{transform:translateY(-3px) scale(1.04)}
+main{max-width:1000px;margin:auto;padding:0 20px}
+section{padding:70px 0;border-bottom:1px solid var(--bd)}
+h2{font-size:clamp(30px,5vw,48px);line-height:1.1;margin:0 0 8px}
+h2 small{display:block;font-size:13px;letter-spacing:.25em;color:var(--ac);text-transform:uppercase;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:20px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+.card h3{margin:.2em 0}.card .n{font:700 40px "Segoe UI",sans-serif;color:var(--ac)}
+.toc a{display:flex;gap:14px;align-items:baseline;text-decoration:none;color:var(--tx);padding:12px 4px;border-bottom:1px dashed var(--bd)}
+.toc a:hover{color:var(--ac)}.toc i{font:700 22px "Segoe UI",sans-serif;color:var(--ac);font-style:normal;min-width:36px}.toc span{margin-left:auto;color:var(--mu);font-size:14px}
+.q{border-left:5px solid var(--ac);padding:10px 18px;margin:20px 0;font-size:1.25em;font-style:italic;background:var(--sf);border-radius:0 12px 12px 0}
+.stat{font:800 clamp(38px,7vw,64px)/1 "Segoe UI",sans-serif;color:var(--ac2)}
+.tl{position:relative;margin:30px 0;padding-left:28px;border-left:3px solid var(--ac)}
+.tl div{margin-bottom:22px;position:relative}.tl div::before{content:"";position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ac);border:3px solid var(--bg)}
+.tl b{font-family:"Segoe UI",sans-serif;color:var(--ac)}
+.fig{margin:22px 0;text-align:center}.fig svg{max-width:100%;height:auto}.fig figcaption{font-size:14px;color:var(--mu)}
+.lab{background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:22px;margin:24px 0}
+input[type=range]{width:100%;accent-color:var(--ac)}
+.bar{height:22px;border-radius:99px;background:var(--bd);overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));transition:width .4s}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;border-radius:12px}.ok{background:#2f9e44!important;color:#fff!important}.no{background:#e03131!important;color:#fff!important}
+.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-family:"Segoe UI",sans-serif;font-size:15px}td,th{border:1px solid var(--bd);padding:8px 10px;text-align:left}th{background:var(--sf)}
+.rv{opacity:0;transform:translateY(30px);transition:all .8s}.rv.on{opacity:1;transform:none}
+ol.ref li{margin:8px 0;font-size:15px}
+footer{text-align:center;padding:40px 20px;color:var(--mu);font-size:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<header><nav>
+<b>OBSOLETA</b><a href="#indice">Índice</a><a href="#marco">Marco de investigación</a><a href="#a1">Historia</a><a href="#a2">Casos</a><a href="#a3">Software</a><a href="#a4">Impacto</a><a href="#lab">Laboratorio</a><a href="#refs">Fuentes</a>
+<button id="th" aria-label="Cambiar tema">◐ Tema</button></nav></header>
+
+<div class="cover" id="top">
+<div class="dots"><span style="width:90px;height:90px;left:8%;top:18%"></span><span style="width:50px;height:50px;right:12%;top:30%;animation-delay:2s"></span><span style="width:130px;height:130px;right:20%;bottom:8%;animation-delay:4s"></span></div>
+<div class="in">
+<span class="tag">Revista digital de investigación · Edición n.º 1 · 2026</span>
+<svg class="bulb" viewBox="0 0 100 130" aria-hidden="true"><defs><radialGradient id="g" cx="50%" cy="40%"><stop offset="0" stop-color="#fff3bf"/><stop offset="1" stop-color="#ff922b"/></radialGradient></defs><path d="M50 4C26 4 10 22 10 44c0 14 7 24 14 33 4 5 6 10 6 16h40c0-6 2-11 6-16 7-9 14-19 14-33C90 22 74 4 50 4z" fill="url(#g)"/><rect x="30" y="97" width="40" height="8" rx="3" fill="#868e96"/><rect x="33" y="107" width="34" height="8" rx="3" fill="#495057"/><rect x="40" y="117" width="20" height="8" rx="4" fill="#343a40"/><path d="M38 62l6-22 6 18 6-18 6 22" stroke="#e8590c" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+<h1>OBSOLETA</h1>
+<p class="lead">La obsolescencia programada: ¿se diseñan las cosas para que dejen de servir?</p>
+<p class="sans" style="color:var(--mu)">Ingeniería en Software · Tecnológico de Antioquia (TdeA)<br>Autores: David Ruiz · Darwin Espinosa · Diego Careth</p>
+<a class="cta" href="#indice">Abrir la revista ↓</a>
+</div></div>
+
+<main>
+<section id="indice" class="rv"><h2><small>Contenido</small>Índice</h2>
+<div class="toc">
+<a href="#marco"><i>01</i>Marco de la investigación: fenómeno, problema y pregunta<span>Editorial</span></a>
+<a href="#a1"><i>02</i>Del cartel Phoebus a la tienda de aplicaciones<span>Historia</span></a>
+<a href="#a2"><i>03</i>Casos reales: cuando la justicia intervino<span>Casos</span></a>
+<a href="#a3"><i>04</i>Obsolescencia del software: el reto de nuestra carrera<span>Tecnología</span></a>
+<a href="#a4"><i>05</i>Basura electrónica: las cifras del impacto<span>Datos</span></a>
+<a href="#a5"><i>06</i>Leyes y soluciones: derecho a reparar<span>Regulación</span></a>
+<a href="#lab"><i>07</i>Laboratorio interactivo y quiz<span>Participa</span></a>
+<a href="#refs"><i>08</i>Fuentes verificables<span>Referencias</span></a>
+</div></section>
+
+<section id="marco" class="rv"><h2><small>Editorial · Revista de investigación</small>Marco de la investigación</h2>
+<p>Este proyecto sigue el esquema de una revista de investigación con enfoque <b>mixto</b> (cuantitativo + cualitativo). A continuación se presentan los seis elementos solicitados.</p>
+<div class="grid">
+<div class="card"><div class="n">1</div><h3>¿Cuál es el fenómeno?</h3><p>La obsolescencia programada: la práctica de diseñar o gestionar productos para que su vida útil o su utilidad sea limitada, de modo que el consumidor deba reemplazarlos.</p></div>
+<div class="card"><div class="n">2</div><h3>¿Cuál es el problema?</h3><p>Los aparatos y el software se vuelven inservibles o lentos antes de lo necesario, lo que genera gasto para las personas y crecimiento de la basura electrónica, con poca información clara para el usuario.</p></div>
+<div class="card"><div class="n">3</div><h3>¿Qué queremos conocer?</h3><p>Cómo se origina, qué casos están documentados, cuánto afecta a estudiantes y familias en nuestro entorno y qué alternativas existen (reparar, actualizar, reciclar).</p></div>
+<div class="card"><div class="n">4</div><h3>Pregunta problema</h3><p><b>¿Cómo influye la obsolescencia programada en la decisión de renovar dispositivos tecnológicos de los estudiantes de Ingeniería en Software del TdeA y qué impacto genera en los residuos electrónicos?</b></p></div>
+<div class="card"><div class="n">5</div><h3>Metodología</h3><p><b>Mixta.</b> Cuantitativo: encuesta con datos medibles. Cualitativo: análisis documental de casos, leyes e informes y entrevistas breves.</p></div>
+<div class="card"><div class="n">6</div><h3>Técnicas</h3><p>Encuesta (cuestionario en línea), análisis documental, entrevista semiestructurada a un técnico de reparación y observación de ciclos de actualización de software.</p></div>
+</div>
+<p class="sans" style="color:var(--mu);font-size:14px;margin-top:18px">Nota para el grupo: la pregunta problema y las técnicas son una propuesta; ajústenlas con su docente.</p></section>
+
+<section id="a1" class="rv"><h2><small>Historia</small>Del cartel Phoebus a la tienda de aplicaciones</h2>
+<p>La idea no es nueva. En 1924, fabricantes de bombillas (entre ellos Osram, Philips y General Electric) formaron en Ginebra el cartel <b>Phoebus</b>, que acordó limitar la duración de las bombillas a unas 1.000 horas. Antes, algunas llegaban a unas 2.500 horas. En 1932, el empresario Bernard London propuso en un folleto la “obsolescencia planificada” como forma de reactivar la economía tras la Gran Depresión.</p>
+<div class="q">Mientras tanto, la bombilla del cuartel de bomberos de Livermore (California) funciona, con pocas interrupciones, desde 1901.</div>
+<div class="tl">
+<div><b>1901</b> · Se enciende la bombilla centenaria de Livermore, California.</div>
+<div><b>1924</b> · Cartel Phoebus: se pacta el límite de 1.000 horas.</div>
+<div><b>1932</b> · Bernard London publica su propuesta de obsolescencia planificada.</div>
+<div><b>2017</b> · Apple admite que sus actualizaciones reducían el rendimiento de iPhone con baterías degradadas.</div>
+<div><b>2020</b> · Francia sanciona a Apple con 25 millones de euros.</div>
+<div><b>2024</b> · La UE aprueba normas de derecho a la reparación.</div>
+</div>
+<figure class="fig"><svg viewBox="0 0 520 150" role="img" aria-label="Comparación de horas de vida de una bombilla"><text x="0" y="22" fill="currentColor" font-size="14">Antes del cartel (~2.500 h)</text><rect x="0" y="30" width="500" height="26" rx="13" fill="#2f9e44"/><text x="0" y="92" fill="currentColor" font-size="14">Tras el acuerdo Phoebus (1.000 h)</text><rect x="0" y="100" width="200" height="26" rx="13" fill="#e8590c"/></svg><figcaption>Figura 1. Duración aproximada de una bombilla incandescente (ilustrativa).</figcaption></figure></section>
+
+<section id="a2" class="rv"><h2><small>Casos</small>Cuando la justicia intervino</h2>
+<p><b>El caso “batterygate”.</b> En diciembre de 2017, Apple reconoció que actualizaciones de iOS limitaban el rendimiento de iPhone 6, 6s, SE y 7 con baterías envejecidas para evitar apagados repentinos. La autoridad francesa (DGCCRF) concluyó que no informó a los usuarios y la sancionó con 25 millones de euros en 2020. Italia ya había multado a Apple con 10 millones de euros en 2018.</p>
+<div class="grid">
+<div class="card"><div class="stat" data-n="25">0</div><p>millones de euros: multa de Francia a Apple (2020).</p></div>
+<div class="card"><div class="stat" data-n="10">0</div><p>millones de euros: multa de Italia a Apple (2018).</p></div>
+<div class="card"><div class="stat" data-n="2017">0</div><p>año en que Apple reconoció la reducción de rendimiento.</p></div></div>
+<p>Apple sostuvo que el objetivo era evitar apagados por baterías degradadas; el reproche legal fue la falta de información al consumidor. Este matiz es clave: la regulación se centró en la <i>omisión de información</i>.</p></section>
+
+<section id="a3" class="rv"><h2><small>Tecnología</small>Obsolescencia del software: el reto de nuestra carrera</h2>
+<p>En software la obsolescencia también ocurre: cuando termina el soporte, el equipo puede funcionar pero queda expuesto. Windows 10, por ejemplo, dejó de recibir actualizaciones de seguridad gratuitas el 14 de octubre de 2025, lo que dejó a muchos equipos funcionales ante la disyuntiva de pagar soporte extendido o cambiarse a otro sistema.</p>
+<div class="scroll"><table><tr><th>Tipo</th><th>Descripción</th><th>Ejemplo</th></tr>
+<tr><td>Funcional</td><td>El producto falla o pierde calidad por diseño</td><td>Bombilla de vida limitada</td></tr>
+<tr><td>De software</td><td>Las actualizaciones dejan atrás equipos antiguos</td><td>Fin de soporte de un sistema operativo</td></tr>
+<tr><td>Psicológica</td><td>Se promueve que lo anterior “ya pasó de moda”</td><td>Lanzamientos anuales de teléfonos</td></tr>
+<tr><td>De compatibilidad</td><td>Piezas o puertos que cambian y vuelven inútil lo previo</td><td>Cargadores y conectores propietarios</td></tr></table></div>
+<p><b>Rol del ingeniero de software:</b> diseñar actualizaciones transparentes, soportar versiones antiguas razonablemente, optimizar el consumo de recursos y documentar claramente el fin de soporte.</p></section>
+
+<section id="a4" class="rv"><h2><small>Datos</small>Basura electrónica: las cifras del impacto</h2>
+<p>El <i>Global E-waste Monitor 2024</i> (UNITAR y UIT) reporta las siguientes cifras mundiales:</p>
+<div class="grid">
+<div class="card"><div class="stat" data-n="62">0</div><p>millones de toneladas de residuos electrónicos generados en 2022 (82 % más que en 2010).</p></div>
+<div class="card"><div class="stat" data-n="22.3" data-d="1">0</div><p>% documentado como recolectado y reciclado correctamente en 2022.</p></div>
+<div class="card"><div class="stat" data-n="82">0</div><p>millones de toneladas proyectadas para 2030.</p></div>
+<div class="card"><div class="stat" data-n="62">0</div><p>miles de millones de dólares en recursos recuperables sin aprovechar.</p></div></div>
+<figure class="fig"><svg viewBox="0 0 520 190" role="img" aria-label="Residuos electrónicos mundiales 2010, 2022, 2030"><g font-size="13" fill="currentColor"><rect x="60" y="102" width="90" height="68" fill="#0b7285"/><text x="60" y="94">≈34 Mt</text><text x="60" y="186">2010</text><rect x="215" y="40" width="90" height="130" fill="#e8590c"/><text x="215" y="32">62 Mt</text><text x="215" y="186">2022</text><rect x="370" y="0" width="90" height="170" fill="#c92a2a" opacity=".85"/><text x="370" y="-4" dy="16" fill="#fff">82 Mt</text><text x="370" y="186">2030 (proy.)</text></g></svg><figcaption>Figura 2. Evolución de los residuos electrónicos (2010 estimada a partir del aumento del 82 % reportado).</figcaption></figure>
+<p><b>En Colombia</b>, la Ley 1672 de 2013 establece la gestión integral de los residuos de aparatos eléctricos y electrónicos (RAEE) y la responsabilidad de productores y comercializadores. La Resolución 0851 de 2022 del Ministerio de Ambiente estimó unas 197 mil toneladas de RAEE generadas en 2021.</p></section>
+
+<section id="a5" class="rv"><h2><small>Regulación</small>Leyes y soluciones</h2>
+<div class="grid">
+<div class="card"><h3>🇫🇷 Francia</h3><p>Desde 2015 tipificó la obsolescencia programada como delito en su ley de transición energética y creó un índice de reparabilidad para productos electrónicos.</p></div>
+<div class="card"><h3>🇪🇺 Unión Europea</h3><p>La Directiva (UE) 2024/1799 impulsa el derecho a la reparación, con obligaciones para fabricantes y plazos para reparar.</p></div>
+<div class="card"><h3>🇨🇴 Colombia</h3><p>La Ley 1672 de 2013 regula los RAEE; falta mayor educación y cultura de devolución y reciclaje.</p></div>
+<div class="card"><h3>♻️ Como usuarios</h3><p>Preferir productos reparables, cambiar baterías, reutilizar, donar y entregar los residuos en puntos autorizados de recolección.</p></div></div></section>
+
+<section id="lab" class="rv"><h2><small>Participa</small>Laboratorio interactivo</h2>
+<div class="lab"><h3>Simulador: ¿cuántos años dura una bombilla?</h3>
+<label class="sans">Horas de uso al día: <b id="hv">4</b> h</label>
+<input type="range" id="hr" min="1" max="12" value="4">
+<div class="sans">Vida de 2.500 h: <b id="y1"></b> años</div><div class="bar"><i id="b1"></i></div>
+<div class="sans">Vida de 1.000 h: <b id="y2"></b> años</div><div class="bar"><i id="b2"></i></div></div>
+<div class="lab"><h3>Quiz rápido</h3><div id="quiz"></div></div></section>
+
+<section id="refs" class="rv"><h2><small>Información verificable</small>Fuentes</h2>
+<ol class="ref">
+<li>UNITAR / UIT (2024). <i>The Global E-waste Monitor 2024</i>. <a href="https://ewastemonitor.info/the-global-e-waste-monitor-2024/" target="_blank" rel="noopener">ewastemonitor.info</a></li>
+<li>UNITAR (2024). Comunicado de prensa del Global E-waste Monitor 2024. <a href="https://www.unitar.org/about/news-stories/press/global-e-waste-monitor-2024-electronic-waste-rising-five-times-faster-documented-e-waste-recycling" target="_blank" rel="noopener">unitar.org</a></li>
+<li>Fortune (7 feb. 2020). Apple hit with $27 million fine for slowing down French iPhones. <a href="https://fortune.com/2020/02/07/apple-iphone-slowdown-update-fine-france" target="_blank" rel="noopener">fortune.com</a></li>
+<li>Telecompaper (2020). European consumer bodies seek EUR 60 per user compensation from Apple (multas de Francia e Italia). <a href="https://www.telecompaper.com/news/european-consumer-bodies-seek-eur-60-per-user-compensation-from-apple--1345264" target="_blank" rel="noopener">telecompaper.com</a></li>
+<li>Ministerio de Ambiente y Desarrollo Sostenible de Colombia (2022). Resolución 0851 de 2022. <a href="https://www.minambiente.gov.co/wp-content/uploads/2022/08/Resolucion-0851-de-2022.pdf" target="_blank" rel="noopener">minambiente.gov.co</a></li>
+<li>Congreso de Colombia (2013). Ley 1672 de 2013, gestión de residuos de aparatos eléctricos y electrónicos.</li>
+<li>Krajewski, M. (2014). The Great Lightbulb Conspiracy. <i>IEEE Spectrum</i> (cartel Phoebus).</li>
+<li>London, B. (1932). <i>Ending the Depression Through Planned Obsolescence</i>.</li>
+<li>Parlamento Europeo y Consejo (2024). Directiva (UE) 2024/1799 sobre normas comunes para promover la reparación de bienes.</li>
+</ol></section>
+</main>
+<footer>© 2026 OBSOLETA · Proyecto académico, Ingeniería en Software, TdeA.<br><a href="#top">Volver arriba ↑</a></footer>
+
+<script>
+(function(){
+var r=document.documentElement;
+document.getElementById("th").onclick=function(){var d=r.getAttribute("data-theme")==="dark"||(!r.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);r.setAttribute("data-theme",d?"light":"dark")};
+var p=document.getElementById("prog");
+addEventListener("scroll",function(){var h=document.documentElement;p.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"});
+function count(el){var t=parseFloat(el.dataset.n),d=+el.dataset.d||0,s=null;function f(ts){s=s||ts;var k=Math.min((ts-s)/1400,1);el.textContent=(t*k).toFixed(d);if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");e.target.querySelectorAll(".stat").forEach(function(s){if(!s.done){s.done=1;count(s)}})}})},{threshold:.15});
+document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+var hr=document.getElementById("hr");
+function sim(){var h=+hr.value;document.getElementById("hv").textContent=h;var a=2500/h/365,b=1000/h/365;document.getElementById("y1").textContent=a.toFixed(1);document.getElementById("y2").textContent=b.toFixed(1);document.getElementById("b1").style.width=Math.min(a/7*100,100)+"%";document.getElementById("b2").style.width=Math.min(b/7*100,100)+"%"}
+hr.oninput=sim;sim();
+var Q=[["¿En qué año se formó el cartel Phoebus?",["1924","1957","2001"],0],["¿Qué país multó a Apple con 25 millones de euros por el caso de las baterías?",["Italia","Francia","España"],1],["Según el Global E-waste Monitor 2024, ¿qué porcentaje de residuos electrónicos se recicló formalmente en 2022?",["22,3 %","60 %","5 %"],0],["¿Qué ley colombiana regula los RAEE?",["Ley 100 de 1993","Ley 1672 de 2013","Ley 1581 de 2012"],1]];
+var i=0,sc=0,box=document.getElementById("quiz");
+function show(){if(i>=Q.length){box.innerHTML="<p class=sans><b>Resultado: "+sc+" / "+Q.length+"</b></p>";var b=document.createElement("button");b.textContent="Reintentar";b.onclick=function(){i=0;sc=0;show()};box.appendChild(b);return}
+var q=Q[i];box.innerHTML="<p class=sans><b>"+(i+1)+". "+q[0]+"</b></p>";
+q[1].forEach(function(o,k){var b=document.createElement("button");b.className="opt";b.textContent=o;b.onclick=function(){var bs=box.querySelectorAll(".opt");bs.forEach(function(x){x.disabled=true});bs[q[2]].classList.add("ok");if(k===q[2])sc++;else b.classList.add("no");setTimeout(function(){i++;show()},1100)};box.appendChild(b)})}
+show();
+})();
+</script>
+</body>
+</html>
